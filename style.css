@@ -1,1 +1,54 @@
 /* Empty file for template. Remember to edit only this file and not the HTML file */
+*:not(:is(header, header *)){
+    background:color-mix(in hsl shorter hue, rgb(25, 133, 49) 10%,rgb(29, 79, 29) 30%)
+}
+:root {
+    font-size: 20px;
+}
+.intro > header {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 0.5;
+    color: #295010;
+    animation: intro 3s;
+    border: 5px solid;
+        border-color: black;
+    text-align: center;
+    background-color: rgb(119, 217, 117);
+}
+@keyframes intro {
+  from {
+    transform: translateY(-5%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.main.supporting > .explanation > h3{
+    color: #4f793e;
+    text-align: center;
+    font-size: 2em;
+}
+.main .explanation > p{
+    font-family:monospace;
+}
+#zen-preamble {
+    font-weight: 300;
+    animation: blury 1000s alternate;
+}
+@keyframes blury {
+    from{
+        filter: blur(0px);
+    }
+
+    to{
+        filter:blur(5px);
+    }
+}
+a {
+    color: #4f793e;
+}

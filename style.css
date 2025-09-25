@@ -1,54 +1,158 @@
-/* Empty file for template. Remember to edit only this file and not the HTML file */
-*:not(:is(header, header *)){
-    background:color-mix(in hsl shorter hue, rgb(25, 133, 49) 10%,rgb(29, 79, 29) 30%)
+html, body {
+    margin: 0;
+    padding: 0;
 }
-:root {
-    font-size: 20px;
-}
-.intro > header {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    line-height: 0.5;
-    color: #295010;
-    animation: intro 3s;
-    border: 5px solid;
-        border-color: black;
-    text-align: center;
-    background-color: rgb(119, 217, 117);
-}
-@keyframes intro {
-  from {
-    transform: translateY(-5%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
-.main.supporting > .explanation > h3{
-    color: #4f793e;
-    text-align: center;
-    font-size: 2em;
-}
-.main .explanation > p{
-    font-family:monospace;
-}
-#zen-preamble {
-    font-weight: 300;
-    animation: blury 1000s alternate;
-}
-@keyframes blury {
-    from{
-        filter: blur(0px);
-    }
-
-    to{
-        filter:blur(5px);
-    }
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
 }
 a {
-    color: #4f793e;
+    color: blue;
+}
+a:visited {
+    color: purple;
+}
+a:hover, a:focus {
+    color: red;
+}
+abbr {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+header {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    text-align: center;
+}
+h1, h2 {
+    font-family: 'Arial Black', sans-serif;
+}
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+h1::before {
+    content: " ";
+}
+h2 {
+    font-size: 2em;
+    margin: 0;
+}
+h2::before {
+    content: " ";
+}
+h3 {
+    font-size: 1.5em;
+    margin: 0;
+}
+p {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+.page-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.summary, .preamble {
+    background-color: #e0f7fa;
+    border-left: 5px solid #00796b;
+    padding: 10px 15px;
+    margin: 20px 0;
+}
+.supporting h3, .supporting p {
+    margin: 10px 0;
+}
+.summary{
+    color: #00796b;
+}
+.intro a, .intro a:visited {
+    color: #004d40;
+}
+.intro a:hover, .intro a:focus {
+    color: #00251a;
+}
+.intro a::before {
+    content: " ";
+}
+.intro a:hover::before {
+    content: " ";
+}
+div.participation, div.benefits {
+    background-color: #fff3e0;
+    border-left: 5px solid #ff9800;
+    padding: 10px 15px;
+    margin: 20px 0;
+}
+header::before, header::after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+header::after {
+    clear: both;
+}
+h1 {
+    content: "";
+}
+h1 ::before {
+    content: "";
+}
+h2 {
+    content: "";
+}
+p {
+    font-size: 1em;
+}
+.summary, .preamble, .supporting div, .requirements h3, .requirements p {
+    width: 60%;
+}
+.explanation h3, .explanation p,
+.participation h3, .participation p,
+.benefits h3, .benefits p {
+    width: 100%;
+}
+aside {
+    border: 0px solid #c0dbb6;
+    background: #efffe5;
+    margin: 10px;
+    padding: 10px;
+    position: absolute;
+    right: 8%;
+    top: 150px;
+    width: 29%;
+    min-width: 300px;
+    max-width: 350px;
+}
+.summary {
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: center;
+}
+.requirements h3, .requirements p {
+    margin: 20px 0;
+}
+.sidebar li {
+    margin: 10% 0;
+    list-style: disc;
+    text-align: left;
+    background: none;
+}
+@media screen and (max-width: 1200px) {
+    .page-wrapper {
+        padding: 10px;
+    }
+    .summary, .preamble, .supporting div, .requirements h3, .requirements p,
+    .explanation h3, .explanation p,
+    .participation h3, .participation p,
+    .benefits h3, .benefits p {
+        width: 100%;
+    }
+    aside {
+        position: static;
+        width: 100%;
+        margin: 20px 0;
+    }
 }

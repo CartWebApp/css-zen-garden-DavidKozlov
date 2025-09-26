@@ -1,9 +1,10 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Helvetica Neue", Arial, sans-serif;
     background-color: #ffffff;
     color: #333333;
 }
@@ -13,7 +14,7 @@ a {
 a:visited {
     color: purple;
 }
-a:hover, a:focus {
+a:hover a:focus {
     color: red;
 }
 abbr {
@@ -25,8 +26,9 @@ header {
     padding: 10px 0;
     text-align: center;
 }
-h1, h2 {
-    font-family: 'Arial Black', sans-serif;
+h1,
+h2 {
+    font-family: "Arial Black", sans-serif;
 }
 h1 {
     font-size: 2.5em;
@@ -47,7 +49,7 @@ h3 {
     margin: 0;
 }
 p {
-    font-family: 'Georgia', serif;
+    font-family: "Georgia", serif;
     line-height: 1.6;
     margin: 10px 0;
 }
@@ -56,22 +58,29 @@ p {
     margin: 0 auto;
     padding: 20px;
 }
-.summary, .preamble {
+.summary,
+.preamble {
     background-color: #e0f7fa;
-    border-left: 5px solid #00796b;
-    padding: 10px 15px;
+    padding: 1.2rem 1.9rem;
     margin: 20px 0;
+    text-align: left;
+    &:is(.preamble) {
+        border-left: 5px solid #00796b;
+    }
 }
-.supporting h3, .supporting p {
+.supporting h3,
+.supporting p {
     margin: 10px 0;
 }
-.summary{
-    color: #00796b;
+.summary {
+    padding-top: 3.75vh;
 }
-.intro a, .intro a:visited {
+.intro a,
+.intro a:visited {
     color: #004d40;
 }
-.intro a:hover, .intro a:focus {
+.intro a:hover,
+.intro a:focus {
     color: #00251a;
 }
 .intro a::before {
@@ -80,13 +89,15 @@ p {
 .intro a:hover::before {
     content: " ";
 }
-div.participation, div.benefits {
+div.participation,
+div.benefits {
     background-color: #fff3e0;
     border-left: 5px solid #ff9800;
     padding: 10px 15px;
     margin: 20px 0;
 }
-header::before, header::after {
+header::before,
+header::after {
     content: "";
     display: block;
     position: absolute;
@@ -106,12 +117,19 @@ h2 {
 p {
     font-size: 1em;
 }
-.summary, .preamble, .supporting div, .requirements h3, .requirements p {
-    width: 60%;
+.summary,
+.preamble,
+.supporting div,
+.requirements h3,
+.requirements p {
+    /* width: 35%; */
 }
-.explanation h3, .explanation p,
-.participation h3, .participation p,
-.benefits h3, .benefits p {
+.explanation h3,
+.explanation p,
+.participation h3,
+.participation p,
+.benefits h3,
+.benefits p {
     width: 100%;
 }
 aside {
@@ -119,19 +137,15 @@ aside {
     background: #efffe5;
     margin: 10px;
     padding: 10px;
-    position: absolute;
-    right: 8%;
-    top: 150px;
+    /* position: absolute; */
+    /* right: 8%; */
+    /* top: 150px; */
     width: 29%;
     min-width: 300px;
     max-width: 350px;
 }
-.summary {
-    font-size: 1.1em;
-    font-weight: 500;
-    text-align: center;
-}
-.requirements h3, .requirements p {
+.requirements h3,
+.requirements p {
     margin: 20px 0;
 }
 .sidebar li {
@@ -144,15 +158,36 @@ aside {
     .page-wrapper {
         padding: 10px;
     }
-    .summary, .preamble, .supporting div, .requirements h3, .requirements p,
-    .explanation h3, .explanation p,
-    .participation h3, .participation p,
-    .benefits h3, .benefits p {
-        width: 100%;
+    .summary,
+    .preamble,
+    .supporting div,
+    .requirements h3,
+    .requirements p,
+    .explanation h3,
+    .explanation p,
+    .participation h3,
+    .participation p,
+    .benefits h3,
+    .benefits p {
+        /* width: 100%; */
     }
     aside {
-        position: static;
-        width: 100%;
-        margin: 20px 0;
+    }
+}
+.page-wrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "section . ."
+        "div . aside";
+    & > section {
+        grid-column: span 3;
+        display: grid;
+        & > header {
+            grid-column: span 2;
+        }
+        & > .summary {
+            order: 1;
+        }
     }
 }

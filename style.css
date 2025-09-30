@@ -62,10 +62,11 @@ p {
 .preamble {
     background-color: #e0f7fa;
     padding: 1.2rem 1.9rem;
-    margin: 20px 0;
+    margin-top: 20px;
     text-align: left;
-    &:is(.preamble) {
-        border-left: 5px solid #00796b;
+    border-left: 5px solid #00796b;
+    &:is(.summary) {
+        font-weight: bold;
     }
 }
 .supporting h3,
@@ -172,6 +173,7 @@ aside {
         /* width: 100%; */
     }
     aside {
+
     }
 }
 .page-wrapper {
@@ -183,11 +185,16 @@ aside {
     & > section {
         grid-column: span 3;
         display: grid;
+        grid-area: section;
         & > header {
-            grid-column: span 2;
+            grid-column: span 1;
         }
         & > .summary {
             order: 1;
         }
+    }
+    & > div {
+        display: grid;
+        grid-area: div;
     }
 }

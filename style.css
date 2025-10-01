@@ -1,4 +1,7 @@
 html,
+* {
+    text-shadow: #a5a5a5 0px 0px 2px;
+}
 body {
     margin: 0;
     padding: 0;
@@ -6,7 +9,9 @@ body {
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     background-color: #ffffff;
-    color: #333333;
+    color: #111;
+    background: url("zen-background-compressed.webp") no-repeat center center fixed;
+    background-size: cover;
 }
 a {
     color: blue;
@@ -22,9 +27,12 @@ abbr {
     text-decoration-style: dotted;
 }
 header {
-    background-color: #f0f0f0;
     padding: 10px 0;
     text-align: center;
+    backdrop-filter: blur(8px);
+    border-radius: 0.2rem;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: #ccc 0px 0px 2px;
 }
 h1,
 h2 {
@@ -34,15 +42,9 @@ h1 {
     font-size: 2.5em;
     margin: 0;
 }
-h1::before {
-    content: " ";
-}
 h2 {
     font-size: 2em;
     margin: 0;
-}
-h2::before {
-    content: " ";
 }
 h3 {
     font-size: 1.5em;
@@ -60,14 +62,13 @@ p {
 }
 .summary,
 .preamble {
-    background-color: #e0f7fa;
     padding: 1.2rem 1.9rem;
     margin-top: 20px;
     text-align: left;
-    border-left: 5px solid #00796b;
-    &:is(.summary) {
-        font-weight: bold;
-    }
+    font-weight: bold;
+    backdrop-filter: blur(8px);
+    border-radius: 0.2rem;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
 }
 .supporting h3,
 .supporting p {
@@ -76,44 +77,26 @@ p {
 .summary {
     padding-top: 3.75vh;
 }
-.intro a,
-.intro a:visited {
-    color: #004d40;
+a,
+a:visited {
+    color: #012d3d;
 }
-.intro a:hover,
-.intro a:focus {
-    color: #00251a;
-}
-.intro a::before {
-    content: " ";
-}
-.intro a:hover::before {
-    content: " ";
+a:hover,
+a:focus {
+    color: #485350;
 }
 div.participation,
 div.benefits {
-    background-color: #fff3e0;
-    border-left: 5px solid #ff9800;
+    backdrop-filter: blur(8px);
+    border-radius: 0.2rem;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
     padding: 10px 15px;
     margin: 20px 0;
 }
 header::before,
 header::after {
-    content: "";
     display: block;
     position: absolute;
-}
-header::after {
-    clear: both;
-}
-h1 {
-    content: "";
-}
-h1 ::before {
-    content: "";
-}
-h2 {
-    content: "";
 }
 p {
     font-size: 1em;
@@ -134,13 +117,10 @@ p {
     width: 100%;
 }
 aside {
-    border: 0px solid #c0dbb6;
-    background: #efffe5;
-    margin: 10px;
+    backdrop-filter: blur(8px);
+    border-radius: 0.2rem;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
     padding: 10px;
-    /* position: absolute; */
-    /* right: 8%; */
-    /* top: 150px; */
     width: 29%;
     min-width: 300px;
     max-width: 350px;
@@ -154,27 +134,6 @@ aside {
     list-style: disc;
     text-align: left;
     background: none;
-}
-@media screen and (max-width: 1200px) {
-    .page-wrapper {
-        padding: 10px;
-    }
-    .summary,
-    .preamble,
-    .supporting div,
-    .requirements h3,
-    .requirements p,
-    .explanation h3,
-    .explanation p,
-    .participation h3,
-    .participation p,
-    .benefits h3,
-    .benefits p {
-        /* width: 100%; */
-    }
-    aside {
-
-    }
 }
 .page-wrapper {
     display: grid;
@@ -196,5 +155,21 @@ aside {
     & > div {
         display: grid;
         grid-area: div;
+        width: 182.3%;
+    }
+}
+footer {
+    display: flex;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.5em;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(1px);
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
+    margin: auto -13vw -5vw -8.5vw !important;
+    & > a {
+        color: #111;
+        text-decoration: none;
     }
 }

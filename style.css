@@ -10,15 +10,16 @@ body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     background-color: #ffffff;
     color: #111;
-    background: url("zen-background-compressed.webp") no-repeat center center fixed;
+    background: url("zen-background-compressed.webp") no-repeat center center
+        fixed;
     background-size: cover;
 }
 div a {
-    color: rgb(55, 55, 137);
+    color: #0f3b4b;
     text-decoration: none;
 }
 a:visited,
-::selection{
+::selection {
     color: purple;
 }
 a:hover a:focus {
@@ -29,7 +30,7 @@ abbr {
     text-decoration-style: dotted;
 }
 h1 + h2 {
-    margin-top: -1px
+    margin-top: -1px;
 }
 header {
     padding: 10px 0;
@@ -55,7 +56,7 @@ h3 {
     font-size: 1.5em;
     margin: 0;
 }
-.preamble > ::first-letter{
+.preamble > ::first-letter {
     font-weight: bold;
 }
 :not(h3) {
@@ -85,10 +86,14 @@ p {
     box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
 }
 .explanation ~ .requirements {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(25px);
     border-radius: 0.2rem;
-    box-shadow: 0px 0px 0.1px 0.3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
     padding: 1px 15px;
+}
+[role="article"] {
+    display: grid;
+    gap: 5px;
 }
 .supporting h3,
 .supporting p {
@@ -99,12 +104,47 @@ p {
 }
 a,
 a:visited {
-    color: #012d3d;
+    color: #0a3d50;
 }
 a:hover,
 a:focus,
 a:active {
-    color: #485350;
+    color: #2d423c;
+}
+a[href] {
+    width: 100px;
+}
+
+footer a[href] {
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateX(10px);
+        opacity: 1;
+        &::before {
+            opacity: 1;
+        }
+    }
+    &::before {
+        content: "»";
+        background-size: contain;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+}
+a[href~="https://github.com/mezzoblue/csszengarden.com"]::before
+{
+    content: "" !important;
+    display: inline-block;
+    background: url(mark-github.svg) no-repeat center center;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    vertical-align: middle;
 }
 div.participation,
 div.benefits {
@@ -122,19 +162,7 @@ header::after {
 p {
     font-size: 1em;
 }
-[article] {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-.summary,
-.preamble,
-.supporting div,
-.requirements h3,
-.requirements p {
-    /* width: 35%; */
-}
+
 .explanation h3,
 .explanation p,
 .participation h3,
@@ -160,7 +188,6 @@ aside {
     margin: 10% 0;
     list-style: disc;
     text-align: left;
-    background: none;
 }
 .page-wrapper {
     display: grid;
@@ -192,9 +219,9 @@ footer {
     font-size: 1.5em;
     justify-content: space-around;
     align-items: center;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(5px);
     box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
-    margin: auto -13vw -5vw -8.5vw !important;
+    margin: auto -13vw -5vw -8.5vw;
     & > a {
         color: #111;
         text-decoration: none;
